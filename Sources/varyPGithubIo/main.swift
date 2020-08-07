@@ -3,7 +3,7 @@ import Publish
 import Plot
 
 // This type acts as the configuration for your website.
-struct varyPGithubIO: Website {
+struct varyPGithubIo: Website {
     enum SectionID: String, WebsiteSectionID {
         // Add the sections that you want your website to contain here:
         case posts
@@ -23,8 +23,8 @@ struct varyPGithubIO: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try varyPGithubIO().publish(withTheme: .localTheme,
-                            deployedUsing: .gitHub("varyP/varyP.github.io"))
+try varyPGithubIo().publish(withTheme: .localTheme,
+                            deployedUsing: .gitHub("varyP/varyP.github.io", useSSH: false))
 
 
 
