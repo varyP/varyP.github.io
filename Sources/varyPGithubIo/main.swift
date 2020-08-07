@@ -1,6 +1,7 @@
 import Foundation
 import Publish
 import Plot
+import VerifyResourcesExistPublishPlugin
 
 // This type acts as the configuration for your website.
 struct varyPGithubIo: Website {
@@ -23,5 +24,13 @@ struct varyPGithubIo: Website {
 }
 
 // This will generate your website using the built-in Foundation theme:
-try varyPGithubIo().publish(withTheme: .localTheme,
-                            deployedUsing: .gitHub("varyP/Blog", useSSH: false))
+try varyPGithubIo().publish(
+    withTheme: .localTheme,
+    deployedUsing: .gitHub("varyP/Blog"),
+    plugins: [
+        .verifyResourcesExist(),
+        .init(name: "Include 404", installer: { context in
+            try context.copyFileToOutput(from: "Content/404.html")
+        })
+    ]
+)
