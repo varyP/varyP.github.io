@@ -34,4 +34,3 @@ try varyPGithubIo().publish(
         })
     ]
 )
-
