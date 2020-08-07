@@ -24,7 +24,7 @@ struct varyPGithubIO: Website {
 
 // This will generate your website using the built-in Foundation theme:
 try varyPGithubIO().publish(withTheme: .localTheme,
-                            deployedUsing: .gitHub("varyP/varyP.github.io", useSSH: false))
+                            deployedUsing: .gitHub("varyP/varyP.github.io"))
 
 
 
