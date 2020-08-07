@@ -8,9 +8,7 @@ let package = Package(
         .executable(name: "varyPGithubIo", targets: ["varyPGithubIo"])
     ],
     dependencies: [
-        .package(url: "https://github.com/johnsundell/publish.git",
-                 .branch("master")
-        )
+        .package(url: "https://github.com/johnsundell/publish.git", from: "0.3.0")
     ],
     targets: [
         .target(
