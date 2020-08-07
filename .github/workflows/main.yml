@@ -1,0 +1,33 @@
+name: Publish
+
+on:
+  push:
+    branches: [ author ]
+
+jobs:
+  build:
+    runs-on: macOS-latest
+
+    steps:
+    - uses: actions/checkout@v2
+  
+    - name: Generate blog
+      run: swift run Blog
+    - name: Publish in github pages repo
+      uses: crazy-max/ghaction-github-pages@v1.4.0
+      with:
+        repo: varyP/blog
+        target_branch: master
+        keep_history: true
+        allow_empty_commit: false
+        build_dir: Output
+        committer_name: Varun 
+        commit_message: Update blog content
+      env:
+        GITHUB_PAT: ${{ secrets.REPO_TOKEN }}
+        
+    - name: Add & Commit changes
+      uses: EndBug/add-and-commit@v4.0.1
+      with:
+        author_name: yourname
+        message: Commit new output
