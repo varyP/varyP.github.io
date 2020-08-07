@@ -25,7 +25,7 @@ private struct LocalHTMLFactory<Site: Website>: HTMLFactory {
                        context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: index, on: context.site, stylesheetPaths: ["/BlogTheme/styles.css"]),
+            .head(for: index, on: context.site, stylesheetPaths: ["BlogTheme/styles.css"]),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
@@ -52,7 +52,7 @@ private struct LocalHTMLFactory<Site: Website>: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: section, on: context.site, stylesheetPaths: ["/BlogTheme/styles.css"]),
+            .head(for: section, on: context.site, stylesheetPaths: ["BlogTheme/styles.css"]),
             .body(
                 .header(for: context, selectedSection: section.id),
                 .wrapper(
@@ -69,7 +69,7 @@ private struct LocalHTMLFactory<Site: Website>: HTMLFactory {
         
         HTML(
             .lang(context.site.language),
-            .head(for: item, on: context.site, stylesheetPaths: ["/BlogTheme/styles.css"]),
+            .head(for: item, on: context.site, stylesheetPaths: ["BlogTheme/styles.css"]),
             .body(
                 .class("item-page"),
                 .header(for: context, selectedSection: item.sectionID),
@@ -92,7 +92,7 @@ private struct LocalHTMLFactory<Site: Website>: HTMLFactory {
                       context: PublishingContext<Site>) throws -> HTML {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site, stylesheetPaths: ["/BlogTheme/styles.css"]),
+            .head(for: page, on: context.site, stylesheetPaths: ["BlogTheme/styles.css"]),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(.contentBody(page.body)),
@@ -105,7 +105,7 @@ private struct LocalHTMLFactory<Site: Website>: HTMLFactory {
                          context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site, stylesheetPaths: ["/BlogTheme/styles.css"]),
+            .head(for: page, on: context.site, stylesheetPaths: ["BlogTheme/styles.css"]),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
@@ -132,7 +132,7 @@ private struct LocalHTMLFactory<Site: Website>: HTMLFactory {
                             context: PublishingContext<Site>) throws -> HTML? {
         HTML(
             .lang(context.site.language),
-            .head(for: page, on: context.site, stylesheetPaths: ["/BlogTheme/styles.css"]),
+            .head(for: page, on: context.site, stylesheetPaths: ["BlogTheme/styles.css"]),
             .body(
                 .header(for: context, selectedSection: nil),
                 .wrapper(
